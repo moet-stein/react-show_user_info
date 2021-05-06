@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Users from './Users.js';
+import ShowUsers from './ShowUsers.js';
 import {
   FormControl,
   InputLabel,
@@ -26,24 +26,24 @@ function Form() {
   };
 
   useEffect(() => {
-    console.log(username, age, userData);
+    console.log(username, age);
   }, [username, age]);
 
   return (
     <React.Fragment>
-      <Grid container m>
+      <Grid container>
         <Grid item sm={12}>
           <Box>
             <FormControl>
               <InputLabel htmlFor="my-input">Username</InputLabel>
-              <Input id="username" onChange={changeName} />
+              <Input id="username" onChange={changeName} required />
             </FormControl>
           </Box>
         </Grid>
         <Grid item sm={12}>
           <FormControl>
             <InputLabel htmlFor="my-input">Age(Years)</InputLabel>
-            <Input id="my-input" onChange={changeAge} />
+            <Input id="my-input" onChange={changeAge} required />
           </FormControl>
         </Grid>
         <Grid item sm={12}>
@@ -59,7 +59,7 @@ function Form() {
           </Box>
         </Grid>
       </Grid>
-      <Users userData={userData} />
+      <ShowUsers userData={userData} />
     </React.Fragment>
   );
 }

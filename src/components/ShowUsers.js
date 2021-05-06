@@ -1,12 +1,18 @@
 import React from 'react';
 import { Box, Card, CardContent } from '@material-ui/core';
 
-function Users(props) {
+function ShowUsers(props) {
   const { userData } = props;
   return (
     <div>
-      {userData.map((user) => (
-        <Box m={3} display="flex" alignItems="center" flexDirection="column">
+      {userData.map((user, index) => (
+        <Box
+          m={3}
+          display="flex"
+          alignItems="center"
+          flexDirection="column"
+          key={index}
+        >
           <Card>
             <CardContent>
               <h3>
@@ -19,4 +25,4 @@ function Users(props) {
     </div>
   );
 }
-export default Users;
+export default ShowUsers;
